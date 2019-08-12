@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="js/vue.min.js"></script>
+    <script src="js/qrious.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Gerador de QRCode</title>
+</head>
+
+<body>
+
+<div id="app">
+    <h1 class="titulo">{{ title }}</h1>
+    <div>
+        <input type="text" size="25" placeholder="Digite para gerar..." v-model="text">
+    </div>
+
+    <div v-if="text" class="output">
+        <img :src="newQRcode" alt="QRcode">
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            title: 'Gerador QRcode',
+            text: 'https://www.google.com.br',
+            qrcode: new QRious({ size:250 })
+        },
+        computed: {
+            newQRcode() {
+                this.qrcode.value = this.text
+                return this.qrcode.toDataURL()
+            }
+        }
+    })
+</script>
+
+</body>
+
+</html>

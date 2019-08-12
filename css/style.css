@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'RobotoMono';
+    src: url('../fonts/RobotoMono-Thin.ttf');
+  }
+  
+  * {
+    font-family: 'Exo 2', sans-serif;
+  }
+
+body {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+    color: #FFF;
+    /* background: linear-gradient(to right, rgb(19, 106, 138), rgb(38, 120, 113)); */
+    background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/08/Best-Site-For-HD-Backgrounds-Free-Download.jpg");
+    background-repeat: no-repeat;
+}
+
+input {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.output {
+    padding: 30px 15px;
+    background-color: transparent;
+}
